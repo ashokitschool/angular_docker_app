@@ -1,0 +1,24 @@
+<div class="main-content">
+    <div class="section-content section-content-p30">
+        <div class="container-fluid">
+
+            <!-- Show when products exist -->
+            <div class="row" *ngIf="products && products.length > 0">
+                <div *ngFor="let tempProduct of products" class="col-md-3">
+                    <div class="product-box">
+                        <img src="{{ tempProduct.imageUrl }}" class="img-responsive">
+                        <h1>{{ tempProduct.name }}</h1>
+                        <div class="price">{{ tempProduct.unitPrice }}</div>
+                        <a href="#" class="primary-btn">Add to cart</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Show when no products are available -->
+            <div class="no-products" *ngIf="!products || products.length === 0">
+                <h2>No products available</h2>
+            </div>
+
+        </div>
+    </div>
+</div>
